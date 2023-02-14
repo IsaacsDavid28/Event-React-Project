@@ -10,6 +10,12 @@ export interface IEventListProps {
 export function EventList (props: IEventListProps) {
     const [events, setEvents] = useState<Affair[]>();
 
+    
+
+    useEffect(() => {
+      console.log(events)
+    }, [events])
+
   return (
     <div className='Events'>
       {events?.map((affair) => <EventItem key ={affair.id} affair={affair} />)}
