@@ -4,13 +4,24 @@ import { useState, useEffect } from 'react';
 import { EventItem } from './EventItem';
 import { GetEventData } from '../services/EventService';
 
-export interface IEventListProps {
-}
+// export interface IEventListProps {
+   // name:            string;
+   // type:            string;
+   // id:              string;
+   // test:            boolean;
+   // url:             string;
+   // locale:          string;
 
-export function EventList (props: IEventListProps) {
-    const [events, setEvents] = useState<Affair[]>();
+// }
 
+export function EventList () {
     
+  const [events, setEvents] = useState<Events>();
+
+    useEffect(() => {
+      GetEventData().then(data => setEvents(data));
+     
+    }, []);
 
     useEffect(() => {
       console.log(events)
@@ -18,7 +29,8 @@ export function EventList (props: IEventListProps) {
 
   return (
     <div className='Events'>
-      {events?.map((affair) => <EventItem key ={affair.id} affair={affair} />)}
+      { events !== undefined && events._embedded.events[0].name }
+      { events !== undefined && events._embedded.events.map((affair) => <EventItem key ={affair.id} affair={affair} />) }
     </div>
   );
 }
