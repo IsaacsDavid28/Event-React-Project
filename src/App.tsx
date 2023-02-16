@@ -1,3 +1,11 @@
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Header } from './components/Header';
+import { EventList } from './components/EventList';
+import { SearchForm } from './components/SearchForm';
+=======
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -6,6 +14,7 @@ import { EventList } from "./components/EventList";
 import { BucketListRoute } from "./components/BucketListRoute";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 
 function App() {
   return (
