@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.Header{
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+#BucketList {
+  text-align: right;
+}
