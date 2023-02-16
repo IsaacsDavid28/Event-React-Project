@@ -14,7 +14,7 @@ export function EventItem (props: IEventItemProps) {
   return (
     <div className='EventItem'>
         <ul>
-            <li>{affair.images[0] && <img src={affair.images[0].url} alt="Event" />}</li>
+            <li>{affair.images[0] && <img src={affair.images[0].url} alt="Event" style={{width:"150px", height:"150px"}}/>}</li>
             <li>{affair.name}</li>
             <li>{affair.dates.start.localDate}</li>
             <li><a href={affair.url} target="_blank">Buy Tickets</a></li>
