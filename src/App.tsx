@@ -1,11 +1,3 @@
-
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Header } from './components/Header';
-import { EventList } from './components/EventList';
-import { SearchForm } from './components/SearchForm';
-=======
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
