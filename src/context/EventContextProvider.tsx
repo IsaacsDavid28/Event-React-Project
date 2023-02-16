@@ -7,12 +7,21 @@ export interface IEventContextProviderProps {
 }
 
 const EventContextProvider = ({children}: IEventContextProviderProps) => {
-    const [event, setEvent] = useState<Affair[]>([]);
+    const [events, setEvents] = useState<Affair[]>([]);
+
+    const addEvent = (event:Affair) => {
+        setEvents([...events, event]);
+    }
+
+    const removeEvent = (id:string) => {
+        setEvents(events.filter((x) => x.id !== id));
+    }
   
     
     return (<EventContext.Provider value={{
-        event: event
-
+        event: events,
+        addEvent: addEvent,
+        removeEvent: removeEvent
     }}>{children}</EventContext.Provider>);
 };
 
