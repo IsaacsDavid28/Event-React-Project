@@ -7,15 +7,16 @@ import { BucketListRoute } from "./components/BucketListRoute";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
-        <EventList />
+
         <Routes>
-          <Route path="/menu" element={<BucketListRoute />} />
+          <Route path="/eventlist" element={<EventList />} />
+          <Route path="/bucketlist" element={<BucketListRoute />} />
+          <Route path="*" element={<Navigate to={"/eventlist"} />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

@@ -21,15 +21,14 @@ export function EventList () {
 
     useEffect(() => {
       GetEventData().then(data => setEvents(data));
-     
     }, []);
 
     useEffect(() => {
       console.log(events)
     }, [events])
 
-    function filterEvents(){
-
+    function filterEvents(events:Events){
+      setEvents(events)
     }
 
   return (
