@@ -6,8 +6,9 @@ export function Header() {
   return (
     <div className="Header">
       <h1>Events</h1>
-      <Link to="/eventlist">Home</Link>
-      <Link to="/bucketlist">Bucket List</Link>
+      <h3>Find Your Next Event!</h3>
+      <Link className="Home" to="/eventlist">Home</Link>
+      <Link className="BucketList" to="/bucketlist">Bucket List</Link>
     </div>
   );
 }

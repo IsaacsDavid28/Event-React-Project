@@ -7,6 +7,7 @@ import { EventItem } from "./EventItem";
 export function BucketListRoute() {
   const { event } = useContext(EventContext);
   const {removeEvent} = useContext(EventContext);
+
   return (
     <div className="BucketListRoute">
       <ol>
@@ -14,6 +15,7 @@ export function BucketListRoute() {
           <>
            <li key={event.name}>
             {event.name} {event.dates.start.localDate}
+            <button className="RemoveEvent" onClick={() => removeEvent(event.id)}>Remove from BucketList</button>
           </li>
           <li>
             <button className="RemoveEvent" onClick={() => removeEvent(event.id)}>Remove from BucketList</button>

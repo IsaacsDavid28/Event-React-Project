@@ -13,7 +13,7 @@ export function EventItem (props: IEventItemProps) {
 
     const venue = affair._embedded.venues[0]
 
-    const {addEvent, removeEvent} = useContext(EventContext);
+    const {addEvent} = useContext(EventContext);
 
   return (
     <div className='EventItem'>
