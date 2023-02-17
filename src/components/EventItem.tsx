@@ -25,7 +25,6 @@ export function EventItem (props: IEventItemProps) {
             <li>{venue && venue.name}</li>
             <button>Details</button>
             <button className="AddEvent" onClick={() => addEvent(affair)}>Add to BucketList</button>
-            <button className="RemoveEvent" onClick={() => removeEvent(affair.id)}>Remove from BucketList</button>
         </ul>        
     </div>
   );

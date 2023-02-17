@@ -39,12 +39,22 @@
 
 .Header{
   background-color: gray;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
-  padding: 5px;
+  padding: 1px;
   margin-bottom: 30px;
 }
 
 #BucketList {
   text-align: right;
+  margin-right: 10px;
+}
+
+h1{
+  font-family: Open Sans;
+  color: rgb(169, 195, 218);
+}
+
+h3{
+  font-family: Kalam;
 }

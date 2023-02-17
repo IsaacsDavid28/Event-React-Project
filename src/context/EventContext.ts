@@ -10,4 +10,4 @@ const defaultValue:EventContextModel = {
 
 const EventContext = createContext(defaultValue)
 
-export default EventContext
+export default EventContext;
