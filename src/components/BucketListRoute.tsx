@@ -12,10 +12,16 @@ export function BucketListRoute() {
     <div className="BucketListRoute">
       <ol>
         {event.map((event) => (
-          <li key={event.name}>
+          <>
+           <li key={event.name}>
             {event.name} {event.dates.start.localDate}
             <button className="RemoveEvent" onClick={() => removeEvent(event.id)}>Remove from BucketList</button>
           </li>
+          <li>
+            <button className="RemoveEvent" onClick={() => removeEvent(event.id)}>Remove from BucketList</button>
+          </li>
+          </>
+         
         ))}
       </ol>
     </div>
