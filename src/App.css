@@ -2,49 +2,44 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: rgb(245, 236, 224);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .Header{
   background-color: gray;
-  color: white;
   font-size: 20px;
-  padding: 5px;
+  padding: 1px;
   margin-bottom: 30px;
+  border: groove;
 }
 
-#BucketList {
-  text-align: right;
+h1{
+  font-family: Open+Sans;
+  color:#93c7d6;
+  font-size: 50px;
 }
+
+h3{
+  font-family: Kalam;
+  color: white;
+}
+
+.Home{
+  color: #93c7d6;
+  padding: 5px;
+}
+
+.BucketList{
+  color: #93c7d6;
+  padding: 5px;
+}
+
+.AddEvent{
+  background-color: #93c7d6;
+  margin: 5px
+}
+
+.Details{
+  background-color: #93c7d6;
+}
+
