@@ -29,3 +29,7 @@ export function queryEvent(keyword:string, city:string, stateCode:string) {
 
     
 }
+
+export function GetEventById(id:string) {
+    return axios.get<Events>(`https://app.ticketmaster.com/discovery/v2/events/${id}`,{params:{apikey:"aTIAD40BFN88gtqVOCuXKbz9V6LJtuZV"}})
+}

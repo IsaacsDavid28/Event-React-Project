@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { EventItem } from './EventItem';
 import { GetEventData } from '../services/EventService';
 import { SearchForm } from './SearchForm';
+import { Col, Row } from 'reactstrap';
 
 // export interface IEventListProps {
    // name:            string;
@@ -34,8 +35,12 @@ export function EventList () {
   return (
     <div className='Events'>
       <SearchForm filterEvents={filterEvents}/>
+      <Row>
+        <Col lg="4">
       { events !== undefined && events._embedded.events[0].name }
       { events !== undefined && events._embedded.events.map((affair) => <EventItem key ={affair.id} affair={affair} />) }
+      </Col>
+      </Row>
     </div>
   );
 }

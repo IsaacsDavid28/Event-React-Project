@@ -6,6 +6,7 @@ import { EventList } from "./components/EventList";
 import { BucketListRoute } from "./components/BucketListRoute";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { DetailsRoute } from "./components/DetailsRoute";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/eventlist" element={<EventList />} />
           <Route path="/bucketlist" element={<BucketListRoute />} />
           <Route path="*" element={<Navigate to={"/eventlist"} />}></Route>
+          <Route path="/detailsroute/:id" element={<DetailsRoute/>}/>
         </Routes>
       </div>
     </BrowserRouter>
