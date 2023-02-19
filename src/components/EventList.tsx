@@ -36,10 +36,11 @@ export function EventList () {
     <div className='Events'>
       <SearchForm filterEvents={filterEvents}/>
       <Row>
-        <Col lg="4">
-      { events !== undefined && events._embedded.events[0].name }
-      { events !== undefined && events._embedded.events.map((affair) => <EventItem key ={affair.id} affair={affair} />) }
-      </Col>
+         { events !== undefined && events._embedded.events.map((affair, index) => (
+    <Col lg="4" key={index}>
+      <EventItem key={affair.id} affair={affair} />
+    </Col>
+    ))}
       </Row>
     </div>
   );

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Affair } from '../models/Events';
 import EventContext from '../context/EventContext';
 import { useContext } from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardLink, CardText, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardLink, CardText, Button, CardDeck } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 export interface IEventItemProps {
@@ -17,9 +17,10 @@ export function EventItem (props: IEventItemProps) {
     const {addEvent} = useContext(EventContext);
 
   return (
+    <CardDeck>
     <div className='EventItem'>
         <Card>
-             {affair.images[0] && <img src={affair.images[0].url} alt="Event" />} 
+             {affair.images[0] && <img src={affair.images[0].url} alt="Event" style={{height: "200px"}}/>} 
             <CardBody>
             <CardTitle tag="h5">{affair.name}</CardTitle>
             <CardSubtitle className='mb-2 text-muted' tag="h6">{affair.dates.start.localDate}</CardSubtitle>
@@ -30,5 +31,6 @@ export function EventItem (props: IEventItemProps) {
             </CardBody>
           </Card>     
     </div>
+    </CardDeck>
   );
 }

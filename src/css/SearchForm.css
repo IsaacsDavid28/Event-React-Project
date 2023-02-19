@@ -1,0 +1,13 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
