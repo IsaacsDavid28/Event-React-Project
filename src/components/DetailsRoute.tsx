@@ -1,11 +1,22 @@
-import * as React from 'react';
+import { Affair } from '../models/Events';
+import EventContext from '../context/EventContext';
+import { useContext, useState } from 'react';
+import { Card, CardBody, CardTitle, CardSubtitle, CardLink, CardText, Button } from 'reactstrap';
+import { Link, useParams } from 'react-router-dom';
 
-export interface IDetailsRouteProps {
-}
+export function DetailsRoute () {
 
-export function DetailsRoute (props: IDetailsRouteProps) {
+  //after get id, call function to service and provide id. 
+
+  //this component will need a state to keep track of event.
+  const {id} = useParams();
+
+  const [detailsRoute, setDetailsRoute] = useState<Affair>();
+
+ 
+
   return (
-    <div>
+    <div className="DetailsRoute">
       
     </div>
   );

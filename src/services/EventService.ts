@@ -24,8 +24,13 @@ export function queryEvent(keyword:string, city:string, stateCode:string) {
         //const events:Affair[] = response.data?._embedded?.events || [];
         
     .catch((error) =>{
+        alert("Invalid search term, please try again");
         console.log(error)
     })
 
     
+}
+
+export function GetEventById(id:string) {
+    return axios.get<Events>(`https://app.ticketmaster.com/discovery/v2/events/${id}`,{params:{apikey:"aTIAD40BFN88gtqVOCuXKbz9V6LJtuZV"}})
 }
