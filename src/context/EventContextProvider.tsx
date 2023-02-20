@@ -13,7 +13,7 @@ const EventContextProvider = ({children}: IEventContextProviderProps) => {
         setEvents([...events, event]);
     }
 
-    const removeEvent = (id:string) => {
+    const removeEvent = (id: string) => {
         setEvents(events.filter((x) => x.id !== id));
     }
   

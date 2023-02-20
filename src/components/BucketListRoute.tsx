@@ -11,13 +11,13 @@ export function BucketListRoute() {
   const { event } = useContext(EventContext);
   const { removeEvent } = useContext(EventContext);
 
-  const venue = event[0]._embedded.venues[0];
+  // const venue = event[0]._embedded.venues[0];
 
   return (
     <div className="BucketListRoute">
       <Row>
-        {event.map((event) => (
-          <Col lg="4">
+        {(event || [])?.map((event, index) => (
+          <Col lg="4" key={`${event.name}_${index}`}>
             <CardDeck>
       <div className="EventItem">
         <Card>
@@ -36,9 +36,14 @@ export function BucketListRoute() {
             <CardLink href={event.url} target="_blank">
               Buy Tickets
             </CardLink>
-            <CardText>{venue && venue.name}</CardText>
+            <CardText>{
+              !!event?._embedded?.venues?.length 
+                ? event._embedded.venues[0]?.name 
+                : "No Venue"
+                }
+              </CardText>
             <Link to={`/detailsroute/${event.id}`}>Details</Link>
-            <Button className="AddEvent" onClick={() => removeEvent(event.id)}>
+            <Button className="RemoveEvent" onClick={() => removeEvent(event.id)}>
               Remove From BucketList
             </Button>
           </CardBody>
@@ -46,7 +51,7 @@ export function BucketListRoute() {
       </div>
     </CardDeck>
           </Col>
-        ))}
+        )) || ""}
         </Row>
     </div>
   );

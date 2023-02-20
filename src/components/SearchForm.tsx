@@ -17,7 +17,9 @@ export function SearchForm (props: ISearchFormProps) {
 function handleSubmit(e:React.FormEvent<HTMLElement>){
   e.preventDefault()
   ///make an API call based on whats in form
-  queryEvent(keyword, city, stateCode).then(data => props.filterEvents(data))
+  queryEvent(keyword, city, stateCode).then(data => {
+    console.log({data})
+    props.filterEvents(data)})
   //take what you get back and feed into the filterEvents function that was passed in 
 }
 

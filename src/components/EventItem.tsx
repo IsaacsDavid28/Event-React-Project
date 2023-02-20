@@ -23,7 +23,9 @@ export interface IEventItemProps {
 export function EventItem(props: IEventItemProps) {
   let { affair } = props;
 
-  const venue = affair._embedded.venues[0];
+  const [disable, setDisable] = React.useState(false)
+
+  const venue = affair?._embedded?.venues[0];
 
   const { addEvent } = useContext(EventContext);
 
@@ -46,9 +48,9 @@ export function EventItem(props: IEventItemProps) {
             <CardLink href={affair.url} target="_blank">
               Buy Tickets
             </CardLink>
-            <CardText>{venue && venue.name}</CardText>
+            <CardText>{venue?.name}</CardText>
             <Link to={`/detailsroute/${props.affair.id}`}>Details</Link>
-            <Button className="AddEvent" onClick={() => addEvent(affair)}>
+            <Button disabled={disable} className="AddEvent" onClick={() => {addEvent(affair); setDisable(true)}}>
               Add to BucketList
             </Button>
           </CardBody>
